@@ -1,6 +1,6 @@
 import React from 'react'
-import { Switch, Route, Link } from 'react-router-dom'
-import { Navbar } from './components'
+import { Routes, Route, Link } from 'react-router-dom'
+import { Navbar, Home, Exchanges, Cryptocurrencies, CryptoDetails, News } from './components'
 
 function App() {
   return (
@@ -10,7 +10,13 @@ function App() {
           <Navbar />
         </div>
         <div className='col-10'>
-          hhhhhhhhhhhhhhhhhhhhhhh
+          <Routes>
+            <Route exact path="/" element={<Home />} />      
+            <Route exact path="/exchanges" element={<Exchanges />} />      
+            <Route exact path="/cryptocurrencies" element={<Cryptocurrencies />} />      
+            <Route exact path="/crypto/:coinId" element={<CryptoDetails />} />      
+            <Route exact path="/news" element={<News />} />      
+          </Routes>
         </div>
       </div>
     </div>
