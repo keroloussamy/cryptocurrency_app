@@ -6,10 +6,10 @@ function App() {
   return (
     <div className="full-container">
       <div className='row m-0'>
-        <div className='col-2 p-0'>
+        <div className='col-xl-2 col-4 p-0'>
           <Navbar />
         </div>
-        <div className='col-10'>
+        <div className='col-xl-10 col-8'>
           <Routes>
             <Route exact path="/" element={<Home />} />      
             <Route exact path="/exchanges" element={<Exchanges />} />      
