@@ -22,8 +22,10 @@ const Cryptocurrencies = ({ simplified }) => {
   return (
     <Fragment>
       {!simplified && (
-        <div className="search-crypto">
+        <div className="d-flex mx-2 my-4">
+          <h3>Cryptocurrency Search :</h3>
           <input
+            className="ms-auto w-25 ps-2"
             placeholder="Search Cryptocurrency"
             onChange={(e) => setSearchTerm(e.target.value.toLowerCase())}
           />
