@@ -7,7 +7,7 @@ import Cryptocurrencies from './Cryptocurrencies';
 import News from './News';
 
 const Home = () => {
-  const { data, isFetching } = useGetCryptosQuery();
+  const { data, isFetching } = useGetCryptosQuery(10);
   const globalStats = data?.data?.stats;
 
   if (isFetching) return 'Loading.....';
@@ -15,7 +15,7 @@ const Home = () => {
   return (
     <Fragment>
       <h1 className="mb-3">Global Crypto Stats</h1>
-      <div className="row bg-light">
+      <div className="row bg-light p-3">
         <div className="col-6">
           <h4>Total Cryptocurrencies</h4>
           <p>{globalStats.total}</p>
@@ -42,15 +42,15 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="d-flex justify-content-between align-items-baseline">
-        <h4>Top 10 Cryptos In The World</h4>
-        <Link to="/cryptocurrencies">Show more</Link>
+      <div className="d-flex justify-content-between align-items-baseline mt-5 mb-2 px-2">
+        <h3>Top 10 Cryptos In The World</h3>
+        <Link to="/cryptocurrencies" className="btn btn-outline-primary">Show more</Link>
       </div>
       <Cryptocurrencies simplified />
 
-      <div className="d-flex justify-content-between align-items-baseline">
-        <h4>Latest Crypto News</h4>
-        <Link to="/cryptocurrencies">Show more</Link>
+      <div className="d-flex justify-content-between align-items-baseline mt-5 mb-2 px-2">
+        <h3>Latest Crypto News</h3>
+        <Link to="/cryptocurrencies" className="btn btn-outline-primary">Show more</Link>
       </div>
       <News simplified />
 
