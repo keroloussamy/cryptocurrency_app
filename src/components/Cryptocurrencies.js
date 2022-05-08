@@ -32,7 +32,7 @@ const Cryptocurrencies = ({ simplified }) => {
       <div className="row">
       {cryptos?.map((currency) => (
         <div className="col-xl-3 col-sm-6 col-12" key={currency.uuid}>
-          <Link key={currency.uuid} to={`/crypto/${currency.uuid}`} className="text-decoration-none text-black">
+          <Link to={`/crypto/${currency.uuid}`} className="text-decoration-none text-black">
             <div className="card p-3 m-2">
               <div className="d-flex justify-content-between">
                 <h5 className="card-title">{`${currency.rank}. ${currency.name}`}</h5>
