@@ -1,5 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 import { useGetCryptoDetailsQuery } from '../services/cryptoApi';
 
@@ -9,7 +11,7 @@ const CryptoDetails = () => {
 
   console.log(data);
   return (
-    <div>CryptoDetails</div>
+    <div>sssssssssss <FontAwesomeIcon icon={faCoffee} /></div>
   )
 }
 
