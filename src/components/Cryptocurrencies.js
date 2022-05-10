@@ -3,6 +3,7 @@ import millify from 'millify';
 import { Link } from 'react-router-dom';
 
 import { useGetCryptosQuery } from '../services/cryptoApi';
+import Loader from './Loader';
 
 
 const Cryptocurrencies = ({ simplified }) => {
@@ -18,6 +19,8 @@ const Cryptocurrencies = ({ simplified }) => {
 
     setCryptos(filteredData);
   }, [cryptosList, searchTerm]); //execute this function when any of arrays values get changed. And it also executed at the begining.
+
+  if (isFetching) return <Loader />;
 
   return (
     <Fragment>
