@@ -5,15 +5,16 @@ import { useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChartBar, faHashtag, faDollarSign, faBolt, faTrophy, faSackDollar, faCircleExclamation, faCheck, faBan } from '@fortawesome/free-solid-svg-icons'
 
-import { useGetCryptoDetailsQuery } from '../services/cryptoApi';
+import { useGetCryptoDetailsQuery, useGetCryptoHistoryQuery } from '../services/cryptoApi';
 import Loader from './Loader';
-
+import LineChart from './LineChart';
 
 
 const CryptoDetails = () => {
   const { coinId } = useParams();
-  const [timeperiod, setTimeperiod] = useState('7d');
+  const [timeperiod, setTimeperiod] = useState('1y');
   const { data, isFetching } = useGetCryptoDetailsQuery(coinId);
+  const { data: coinHistory } = useGetCryptoHistoryQuery({ coinId, timeperiod });
   const cryptoDetails = data?.data?.coin;
 
   if (isFetching) return <Loader />;
@@ -44,13 +45,19 @@ const CryptoDetails = () => {
       </div>
       <hr />
 
-      <select
-        className="p-2"
-        placeholder="Select Time"
-        onChange={(value) => setTimeperiod(value)}>
-        {time.map((date) => <option key={date}>{date}</option>)}
-      </select>
+      <div className="d-flex justify-content-between">
+        <h3>{data?.data?.coin.name} Price Chart</h3>
+        <select
+          className="p-2 px-5 d-block ms-auto"
+          defaultValue="1y"
+          placeholder="Select Time"
+          onChange={(e) => {console.log(e.target.value); setTimeperiod(e.target.value)}}>
+          {time.map((date) => <option key={date}>{date}</option>)}
+        </select>
+      </div>
       
+      <LineChart coinHistory={coinHistory} />
+
       <div className="row">
         <div className="col-md-6 col-12">
           <h3 className="text-primary">{cryptoDetails.name} Value Statistics</h3>
@@ -92,10 +99,10 @@ const CryptoDetails = () => {
         </div>
         <div className="col-md-6 col-12">
           <h3 className="text-primary pb-3">{cryptoDetails.name} Links</h3>
-            {cryptoDetails.links?.map((link) => (
-              <div className=""  key={link.name}>
+            {cryptoDetails.links?.map((link, id) => (
+              <div key={link.name+id}>
               <div className="d-flex justify-content-between ms-1 me-3">
-                <h5 className="">{link.type}</h5>
+                <h5>{link.type}</h5>
                 <a href={link.url} target="_blank" rel="noreferrer">{link.name}</a>
               </div>
               <hr />
