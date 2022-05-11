@@ -9,11 +9,11 @@
 
 - React
 - Redux Toolkit
-- [RapidApi](https://rapidapi.com/) - [Coinranking](https://rapidapi.com/Coinranking/api/coinranking1/) & [Bing News Search](https://rapidapi.com/microsoft-azure-org-microsoft-cognitive-services/api/bing-news-search1/)
+- [RapidApis](https://rapidapi.com/): [Coinranking](https://rapidapi.com/Coinranking/api/coinranking1/) & [Bing News Search](https://rapidapi.com/microsoft-azure-org-microsoft-cognitive-services/api/bing-news-search1/)
 
 ## Live Demo
 
-[Live Demo Link]()
+[Live Demo Link](https://cryptoapicurrency.netlify.app)
 
 ## Getting Started
 To get a local copy up and running follow these simple example steps.
@@ -24,7 +24,7 @@ To get a local copy up and running follow these simple example steps.
 - After downloading run `npm i` to install all Node packages.
 - Run `npm start` to run the project.
 
-### Install
+### Required Install
 
 - Node
 - npm
@@ -49,7 +49,7 @@ Feel free to check the [issues page](../../issues/).
 Give a ⭐️ if you like this project!
 
 ## Acknowledgments
-- Original design idea by [Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio).
+- Original idea by [Adrian Hajdin - JavaScript Mastery](https://github.com/adrianhajdin/project_cryptoverse).
 
 ## 📝 License
 
