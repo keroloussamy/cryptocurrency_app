@@ -15,7 +15,7 @@ const Home = () => {
 
   return (
     <Fragment>
-      <h1 className="mb-3">Global Crypto Stats</h1>
+      <h1 className="py-3">Global Crypto Stats</h1>
       <div className="row bg-light p-3">
         <div className="col-6">
           <h4>Total Cryptocurrencies</h4>
