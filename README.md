@@ -9,6 +9,7 @@
 
 - React
 - Redux Toolkit
+- RTK Query
 - [RapidApis](https://rapidapi.com/): [Coinranking](https://rapidapi.com/Coinranking/api/coinranking1/) & [Bing News Search](https://rapidapi.com/microsoft-azure-org-microsoft-cognitive-services/api/bing-news-search1/)
 
 ## Live Demo
