@@ -8,8 +8,8 @@
 ## Built With
 
 - React
-- Redux Toolkit
-- RTK Query
+- Redux Toolkit & RTK Query
+- Chart JS & Moment JS & Millify & Html-react-parser
 - [RapidApis](https://rapidapi.com/): [Coinranking](https://rapidapi.com/Coinranking/api/coinranking1/) & [Bing News Search](https://rapidapi.com/microsoft-azure-org-microsoft-cognitive-services/api/bing-news-search1/)
 
 ## Live Demo
